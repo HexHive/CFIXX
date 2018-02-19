@@ -1,0 +1,619 @@
+clang version 3.9.1 (tags/RELEASE_391/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/nathan/Code/cfixx-code/Test/../debug-install/bin
+Found candidate GCC installation: /usr/lib/gcc/i686-linux-gnu/5
+Found candidate GCC installation: /usr/lib/gcc/i686-linux-gnu/5.4.0
+Found candidate GCC installation: /usr/lib/gcc/i686-linux-gnu/6
+Found candidate GCC installation: /usr/lib/gcc/i686-linux-gnu/6.0.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/4.9
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/4.9.3
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+ "/home/nathan/Code/cfixx-code/debug-install/bin/clang-3.9" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -disable-free -main-file-name single-inheritance.cpp -mrelocation-model static -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -momit-leaf-frame-pointer -v -dwarf-column-info -debugger-tuning=gdb -resource-dir /home/nathan/Code/cfixx-code/debug-install/bin/../lib/clang/3.9.1 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0/backward -internal-isystem /usr/local/include -internal-isystem /home/nathan/Code/cfixx-code/debug-install/bin/../lib/clang/3.9.1/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -std=c++11 -fdeprecated-macro -fdebug-compilation-dir /home/nathan/Code/cfixx-code/Test -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o /tmp/single-inheritance-248fd6.o -x c++ single-inheritance.cpp
+clang -cc1 version 3.9.1 based upon LLVM 3.9.1 default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0
+ /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0
+ /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0/backward
+ /usr/local/include
+ /home/nathan/Code/cfixx-code/debug-install/bin/../lib/clang/3.9.1/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+  PUSH64r %RBX<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 3, %RDX<imp-def>
+  %RAX<def> = MOV64rm %RIP, 1, %noreg, <ga:@_ZSt4cout>, %noreg; mem:LD8[bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**)](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%0]
+  %RBX<def> = MOV64rm %RAX<kill>, 1, %noreg, <ga:@_ZSt4cout+240>, %noreg; mem:LD8[%1](tbaa=!5)
+  TEST64rr %RBX, %RBX, %EFLAGS<imp-def>
+  JE_1 <BB#5>, %EFLAGS<imp-use>
+  CMP8mi %RBX, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i](align=8)(tbaa=!10)
+  JE_1 <BB#3>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBX<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i](tbaa=!7)
+  JMP_1 <BB#4>
+  %RDI<def> = MOV64rr %RBX
+  %RAX<def> = MOV64rr %RBX
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RCX<def> = MOV64ri 139642347479040
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%10]
+  %ECX<def> = MOV32rr %EBX, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%13]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBX<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %RBX<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  PUSH64r %R15<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R14<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R12<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %RBX<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %RAX<undef>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  %R14<def> = MOV64rr %RDI
+  %R12<def> = MOV64ri 139642347479040
+  %EBX<def,tied1> = XOR32rr %EBX<undef,tied0>, %EBX<undef>, %EFLAGS<imp-def,dead>, %RBX<imp-def>
+  %RDI<def> = MOV64rm %R14, 8, %RBX, 0, %noreg; mem:LD8[%scevgep](tbaa=!6)
+  %RAX<def> = MOV64rr %RDI
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R12, 1, %RAX<kill>, 0, %noreg; mem:LD8[%7]
+  %ECX<def> = MOV32rr %EDI, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%10]
+  %ESI<def> = MOV32rr %EBX
+  %RDI<def> = MOV64rm %R14, 8, %RBX, 0, %noreg; mem:LD8[%scevgep](tbaa=!6)
+  TEST64rr %RDI, %RDI, %EFLAGS<imp-def>
+  JE_1 <BB#8>, %EFLAGS<imp-use>
+  %ESI<def,dead> = MOV32ri <ga:@_ZTI6Parent>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri <ga:@_ZTI6ChildA>, %RDX<imp-def>
+  %ECX<def,dead,tied1> = XOR32rr %ECX<undef,tied0>, %ECX<undef>, %EFLAGS<imp-def,dead>, %RCX<imp-def>
+  TEST64rr %RAX<kill>, %RAX, %EFLAGS<imp-def>
+  JE_1 <BB#8>, %EFLAGS<imp-use>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.1>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 30, %RDX<imp-def>
+  %RAX<def> = MOV64rm %RIP, 1, %noreg, <ga:@_ZSt4cout>, %noreg; mem:LD8[bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**)](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%17]
+  %R15<def> = MOV64rm %RAX<kill>, 1, %noreg, <ga:@_ZSt4cout+240>, %noreg; mem:LD8[%18](tbaa=!5)
+  TEST64rr %R15, %R15, %EFLAGS<imp-def>
+  JE_1 <BB#10>, %EFLAGS<imp-use>
+  CMP8mi %R15, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i](align=8)(tbaa=!10)
+  JE_1 <BB#6>, %EFLAGS<imp-use,kill>
+  %EAX<def> = MOVZX32rm8 %R15<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i](tbaa=!7)
+  JMP_1 <BB#7>
+  %RDI<def> = MOV64rr %R15
+  %RAX<def> = MOV64rr %R15
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R12, 1, %RAX<kill>, 0, %noreg; mem:LD8[%28]
+  %ECX<def> = MOV32rr %R15D, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%31]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %R15<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %RBX<def,tied1> = INC64r %RBX<kill,tied0>, %EFLAGS<imp-def,dead>
+  CMP64ri8 %RBX, 3, %EFLAGS<imp-def>
+  JL_1 <BB#1>, %EFLAGS<imp-use>
+  %RSP<def,tied1> = ADD64ri8 %RSP<tied0>, 8, %EFLAGS<imp-def,dead>; flags: FrameDestroy
+  %RBX<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R12<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R14<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R15<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  RETQ
+  PUSH64r %RAX<undef>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  %EDI<def,dead> = MOV32ri <ga:@_ZTI6Parent>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@_ZTVN10__cxxabiv117__class_type_infoE+16>, %RSI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZTI6ChildA>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@_ZTVN10__cxxabiv120__si_class_type_infoE+16>, %RSI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZTI6ChildB>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@_ZTVN10__cxxabiv120__si_class_type_infoE+16>, %RSI<imp-def>
+  %RAX<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  PUSH64r %R15<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R14<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R12<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %RBX<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %RAX<undef>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  %R14<def> = MOV64rr %RDI
+  %R12<def> = MOV64ri 139642347479040
+  %EBX<def,tied1> = XOR32rr %EBX<undef,tied0>, %EBX<undef>, %EFLAGS<imp-def,dead>, %RBX<imp-def>
+  %RDI<def> = MOV64rm %R14, 8, %RBX, 0, %noreg; mem:LD8[%scevgep](tbaa=!6)
+  %RAX<def> = MOV64rr %RDI
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R12, 1, %RAX<kill>, 0, %noreg; mem:LD8[%7]
+  %ECX<def> = MOV32rr %EDI, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%10]
+  %ESI<def> = MOV32rr %EBX
+  %RDI<def> = MOV64rm %R14, 8, %RBX, 0, %noreg; mem:LD8[%scevgep](tbaa=!6)
+  TEST64rr %RDI, %RDI, %EFLAGS<imp-def>
+  JE_1 <BB#8>, %EFLAGS<imp-use>
+  %ESI<def,dead> = MOV32ri <ga:@_ZTI6Parent>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri <ga:@_ZTI6ChildA>, %RDX<imp-def>
+  %ECX<def,dead,tied1> = XOR32rr %ECX<undef,tied0>, %ECX<undef>, %EFLAGS<imp-def,dead>, %RCX<imp-def>
+  TEST64rr %RAX<kill>, %RAX, %EFLAGS<imp-def>
+  JE_1 <BB#8>, %EFLAGS<imp-use>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.1>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 30, %RDX<imp-def>
+  %RAX<def> = MOV64rm %RIP, 1, %noreg, <ga:@_ZSt4cout>, %noreg; mem:LD8[bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**)](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%17]
+  %R15<def> = MOV64rm %RAX<kill>, 1, %noreg, <ga:@_ZSt4cout+240>, %noreg; mem:LD8[%18](tbaa=!5)
+  TEST64rr %R15, %R15, %EFLAGS<imp-def>
+  JE_1 <BB#10>, %EFLAGS<imp-use>
+  CMP8mi %R15, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i](align=8)(tbaa=!10)
+  JE_1 <BB#6>, %EFLAGS<imp-use,kill>
+  %EAX<def> = MOVZX32rm8 %R15<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i](tbaa=!7)
+  JMP_1 <BB#7>
+  %RDI<def> = MOV64rr %R15
+  %RAX<def> = MOV64rr %R15
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R12, 1, %RAX<kill>, 0, %noreg; mem:LD8[%28]
+  %ECX<def> = MOV32rr %R15D, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%31]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %R15<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %RBX<def,tied1> = INC64r %RBX<kill,tied0>, %EFLAGS<imp-def,dead>
+  CMP64ri8 %RBX, 3, %EFLAGS<imp-def>
+  JL_1 <BB#1>, %EFLAGS<imp-use>
+  %RSP<def,tied1> = ADD64ri8 %RSP<tied0>, 8, %EFLAGS<imp-def,dead>; flags: FrameDestroy
+  %RBX<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R12<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R14<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  %R15<def> = POP64r %RSP<imp-def>, %RSP<imp-use>; flags: FrameDestroy
+  RETQ
+  MOV64mi32 %vreg120, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%0](tbaa=!2) GR64:%vreg120
+  %vreg547<def> = LEA64r %vreg120, 1, %noreg, 0, %noreg; GR64:%vreg547,%vreg120
+  %vreg548<def,tied1> = SHR64ri %vreg547<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg548,%vreg547
+  BNDCU64rm %BND0, %vreg548<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg548
+  MOV64mi32 %vreg158, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%33](tbaa=!2) GR64:%vreg158
+  %vreg549<def> = LEA64r %vreg158, 1, %noreg, 0, %noreg; GR64:%vreg549,%vreg158
+  %vreg550<def,tied1> = SHR64ri %vreg549<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg550,%vreg549
+  BNDCU64rm %BND0, %vreg550<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg550
+  MOV64mi32 %vreg13, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildA+16>; mem:ST8[%46](tbaa=!2) GR64:%vreg13
+  %vreg551<def> = LEA64r %vreg13, 1, %noreg, 0, %noreg; GR64:%vreg551,%vreg13
+  %vreg552<def,tied1> = SHR64ri %vreg551<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg552,%vreg551
+  BNDCU64rm %BND0, %vreg552<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg552
+  MOV64mi32 %vreg201, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%73](tbaa=!2) GR64:%vreg201
+  %vreg553<def> = LEA64r %vreg201, 1, %noreg, 0, %noreg; GR64:%vreg553,%vreg201
+  %vreg554<def,tied1> = SHR64ri %vreg553<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg554,%vreg553
+  BNDCU64rm %BND0, %vreg554<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg554
+  MOV64mi32 %vreg27, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildB+16>; mem:ST8[%86](tbaa=!2) GR64:%vreg27
+  %vreg555<def> = LEA64r %vreg27, 1, %noreg, 0, %noreg; GR64:%vreg555,%vreg27
+  %vreg556<def,tied1> = SHR64ri %vreg555<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg556,%vreg555
+  BNDCU64rm %BND0, %vreg556<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg556
+  MOV64mr <fi#0>, 1, %noreg, 0, %noreg, %vreg2; mem:ST8[%114](align=16)(tbaa=!6) GR64:%vreg2
+  %vreg557<def> = LEA64r <fi#0>, 1, %noreg, 0, %noreg; GR64:%vreg557
+  %vreg558<def,tied1> = SHR64ri %vreg557<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg558,%vreg557
+  BNDCU64rm %BND0, %vreg558<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg558
+  MOV64mr <fi#0>, 1, %noreg, 8, %noreg, %vreg13; mem:ST8[%115](tbaa=!6) GR64:%vreg13
+  %vreg559<def> = LEA64r <fi#0>, 1, %noreg, 8, %noreg; GR64:%vreg559
+  %vreg560<def,tied1> = SHR64ri %vreg559<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg560,%vreg559
+  BNDCU64rm %BND0, %vreg560<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg560
+  MOV64mr <fi#0>, 1, %noreg, 16, %noreg, %vreg27; mem:ST8[%116](align=16)(tbaa=!6) GR64:%vreg27
+  %vreg561<def> = LEA64r <fi#0>, 1, %noreg, 16, %noreg; GR64:%vreg561
+  %vreg562<def,tied1> = SHR64ri %vreg561<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg562,%vreg561
+  BNDCU64rm %BND0, %vreg562<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg562
+  MOV64mi32 %vreg27, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%134](tbaa=!2) GR64:%vreg27
+  %vreg563<def> = LEA64r %vreg27, 1, %noreg, 0, %noreg; GR64:%vreg563,%vreg27
+  %vreg564<def,tied1> = SHR64ri %vreg563<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg564,%vreg563
+  BNDCU64rm %BND0, %vreg564<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg564
+  MOV64mi32 %vreg27, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildB+16>; mem:ST8[%140](tbaa=!2) GR64:%vreg27
+  %vreg565<def> = LEA64r %vreg27, 1, %noreg, 0, %noreg; GR64:%vreg565,%vreg27
+  %vreg566<def,tied1> = SHR64ri %vreg565<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg566,%vreg565
+  BNDCU64rm %BND0, %vreg566<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg566
+  MOV64mi32 %vreg335, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%184](tbaa=!2) GR64:%vreg335
+  %vreg567<def> = LEA64r %vreg335, 1, %noreg, 0, %noreg; GR64:%vreg567,%vreg335
+  %vreg568<def,tied1> = SHR64ri %vreg567<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg568,%vreg567
+  BNDCU64rm %BND0, %vreg568<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg568
+  MOV64mi32 %vreg60, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildA+16>; mem:ST8[%197](tbaa=!2) GR64:%vreg60
+  %vreg569<def> = LEA64r %vreg60, 1, %noreg, 0, %noreg; GR64:%vreg569,%vreg60
+  %vreg570<def,tied1> = SHR64ri %vreg569<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg570,%vreg569
+  BNDCU64rm %BND0, %vreg570<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg570
+  MOV64mi32 %vreg403, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%242](tbaa=!2) GR64:%vreg403
+  %vreg571<def> = LEA64r %vreg403, 1, %noreg, 0, %noreg; GR64:%vreg571,%vreg403
+  %vreg572<def,tied1> = SHR64ri %vreg571<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg572,%vreg571
+  BNDCU64rm %BND0, %vreg572<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg572
+  MOV64mi32 %vreg78, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildA+16>; mem:ST8[%255](tbaa=!2) GR64:%vreg78
+  %vreg573<def> = LEA64r %vreg78, 1, %noreg, 0, %noreg; GR64:%vreg573,%vreg78
+  %vreg574<def,tied1> = SHR64ri %vreg573<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg574,%vreg573
+  BNDCU64rm %BND0, %vreg574<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg574
+  MOV64mr <fi#1>, 1, %noreg, 0, %noreg, %vreg78; mem:ST8[%264](tbaa=!6) GR64:%vreg78
+  %vreg575<def> = LEA64r <fi#1>, 1, %noreg, 0, %noreg; GR64:%vreg575
+  %vreg576<def,tied1> = SHR64ri %vreg575<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg576,%vreg575
+  BNDCU64rm %BND0, %vreg576<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg576
+  MOV64mi32 <fi#2>, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%285](tbaa=!2)
+  %vreg577<def> = LEA64r <fi#2>, 1, %noreg, 0, %noreg; GR64:%vreg577
+  %vreg578<def,tied1> = SHR64ri %vreg577<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg578,%vreg577
+  BNDCU64rm %BND0, %vreg578<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg578
+  MOV64mi32 <fi#2>, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildA+16>; mem:ST8[%298](tbaa=!2)
+  %vreg579<def> = LEA64r <fi#2>, 1, %noreg, 0, %noreg; GR64:%vreg579
+  %vreg580<def,tied1> = SHR64ri %vreg579<kill,tied0>, 24, %EFLAGS<imp-def>; GR64:%vreg580,%vreg579
+  BNDCU64rm %BND0, %vreg580<kill>, 0, %noreg, 4286643562, %noreg; GR64:%vreg580
+  PUSH64r %RBP<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R15<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R14<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R13<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %R12<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  PUSH64r %RBX<kill>, %RSP<imp-def>, %RSP<imp-use>; flags: FrameSetup
+  %RSP<def,tied1> = SUB64ri8 %RSP<tied0>, 72, %EFLAGS<imp-def,dead>; flags: FrameSetup
+  %R14D<def> = MOV32rr %EDI
+  %RBP<def> = MOV64ri 139998731743232
+  %R15<def> = MOV64ri 139642347479040
+  %EDI<def,dead> = MOV32ri 8, %RDI<imp-def>
+  %R12<def> = MOV64rr %RAX
+  %RAX<def> = LEA64r %R12, 1, %noreg, 0, %noreg
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0<kill>, %RAX<kill>, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %R12, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%0](tbaa=!2)
+  %RDI<def> = MOV64rr %R12
+  %RDI<def,tied1> = SHR64ri %RDI<kill,tied0>, 26, %EFLAGS<imp-def,dead>
+  %EDI<def,tied1> = AND32ri %EDI<tied0>, 4194303, %EFLAGS<imp-def,dead>, %RDI<imp-use,kill>, %RDI<imp-def>
+  %RAX<def> = MOV64rm %R15, 8, %RDI, 0, %noreg; mem:LD8[%5]
+  %EBX<def> = MOV32rr %R12D, %RBX<imp-def>
+  %EBX<def,tied1> = SHR32ri %EBX<tied0>, 3, %EFLAGS<imp-def,dead>, %RBX<imp-use,kill>, %RBX<imp-def>
+  %EBX<def,tied1> = AND32ri %EBX<tied0>, 8388607, %EFLAGS<imp-def,dead>, %RBX<imp-use,kill>, %RBX<imp-def>
+  CMP64rr %RAX, %RBP<kill>, %EFLAGS<imp-def>
+  JNE_1 <BB#2>, %EFLAGS<imp-use>
+  %RSI<def> = LEA64r %RAX<kill>, 8, %RBX<kill>, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6Parent+16>, %RDI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.2>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 4, %RDX<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RSI<def> = MOV64rr %R12
+  %RBX<def> = MOV64rr %RAX
+  %RAX<def> = MOV64rm %RBX, 1, %noreg, 0, %noreg; mem:LD8[%14](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%15]
+  %RBP<def> = MOV64rm %RBX, 1, %RAX<kill>, 240, %noreg; mem:LD8[%17](tbaa=!5)
+  TEST64rr %RBP, %RBP, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  CMP8mi %RBP, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i](align=8)(tbaa=!10)
+  MOV64mr %RSP, 1, %noreg, 32, %noreg, %R12<kill>; mem:ST8[FixedStack3]
+  MOV32mr %RSP, 1, %noreg, 16, %noreg, %R14D<kill>; mem:ST4[FixedStack5]
+  JE_1 <BB#5>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBP<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i](tbaa=!7)
+  JMP_1 <BB#6>
+  %RDI<def> = MOV64rr %RBP
+  %RAX<def> = MOV64rr %RBP
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R15, 1, %RAX<kill>, 0, %noreg; mem:LD8[%27]
+  %ECX<def> = MOV32rr %EBP, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%30]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBP<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %RDI<def> = MOV64rr %RBX<kill>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %EDI<def,dead> = MOV32ri 8, %RDI<imp-def>
+  %R13<def> = MOV64rr %RAX
+  %R14<def> = LEA64r %R13, 1, %noreg, 0, %noreg
+  %R14<def,tied1> = SHR64ri %R14<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0<kill>, %R14, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %R13, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%33](tbaa=!2)
+  %RBX<def> = MOV64rr %R13
+  %RBX<def,tied1> = SHR64ri %RBX<kill,tied0>, 26, %EFLAGS<imp-def,dead>
+  %EBX<def,tied1> = AND32ri %EBX<tied0>, 4194303, %EFLAGS<imp-def,dead>, %RBX<imp-use,kill>, %RBX<imp-def>
+  %RAX<def> = MOV64rm %R15, 8, %RBX, 0, %noreg; mem:LD8[%38]
+  %EBP<def> = MOV32rr %R13D, %RBP<imp-def>
+  %EBP<def,tied1> = SHR32ri %EBP<tied0>, 3, %EFLAGS<imp-def,dead>, %RBP<imp-use,kill>, %RBP<imp-def>
+  %EBP<def,tied1> = AND32ri %EBP<tied0>, 8388607, %EFLAGS<imp-def,dead>, %RBP<imp-use,kill>, %RBP<imp-def>
+  %R12<def> = MOV64rr %R15<kill>
+  %R15<def> = MOV64ri 139998731743232
+  CMP64rr %RAX, %R15, %EFLAGS<imp-def>
+  JNE_1 <BB#8>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %RBX
+  %RSI<def> = LEA64r %RAX<kill>, 8, %RBP, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6Parent+16>, %RDI<imp-def>
+  BNDCU64rm %BND0<kill>, %R14<kill>, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %R13, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildA+16>; mem:ST8[%46](tbaa=!2)
+  %R14<def> = MOV64rr %R12
+  %RAX<def> = MOV64rm %R12<kill>, 8, %RBX, 0, %noreg; mem:LD8[%sunkaddr387]
+  CMP64rr %RAX, %R15<kill>, %EFLAGS<imp-def>
+  JNE_1 <BB#10>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %RBX<kill>
+  %RSI<def> = LEA64r %RAX<kill>, 8, %RBP<kill>, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6ChildA+16>, %RDI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.3>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 4, %RDX<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RSI<def> = MOV64rr %R13
+  %RBX<def> = MOV64rr %RAX
+  %RAX<def> = MOV64rm %RBX, 1, %noreg, 0, %noreg; mem:LD8[%54](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%55]
+  %RBP<def> = MOV64rm %RBX, 1, %RAX<kill>, 240, %noreg; mem:LD8[%57](tbaa=!5)
+  TEST64rr %RBP, %RBP, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  CMP8mi %RBP, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i94](align=8)(tbaa=!10)
+  MOV64mr %RSP, 1, %noreg, 24, %noreg, %R13<kill>; mem:ST8[FixedStack4]
+  JE_1 <BB#13>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBP<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i97](tbaa=!7)
+  JMP_1 <BB#14>
+  %RDI<def> = MOV64rr %RBP
+  %RAX<def> = MOV64rr %RBP
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R14, 1, %RAX<kill>, 0, %noreg; mem:LD8[%67]
+  %ECX<def> = MOV32rr %EBP, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%70]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBP<kill>
+  %R12<def> = MOV64rr %R14<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %RDI<def> = MOV64rr %RBX<kill>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %EDI<def,dead> = MOV32ri 8, %RDI<imp-def>
+  %RBP<def> = MOV64rr %RAX
+  %R15<def> = LEA64r %RBP, 1, %noreg, 0, %noreg
+  %R15<def,tied1> = SHR64ri %R15<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0<kill>, %R15, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %RBP, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%73](tbaa=!2)
+  %R14<def> = MOV64rr %RBP
+  %R14<def,tied1> = SHR64ri %R14<kill,tied0>, 26, %EFLAGS<imp-def,dead>
+  %R14D<def,tied1> = AND32ri %R14D<tied0>, 4194303, %EFLAGS<imp-def,dead>, %R14<imp-use,kill>, %R14<imp-def>
+  %RAX<def> = MOV64rm %R12, 8, %R14, 0, %noreg; mem:LD8[%78]
+  %R13D<def> = MOV32rr %EBP, %R13<imp-def>
+  %R13D<def,tied1> = SHR32ri %R13D<tied0>, 3, %EFLAGS<imp-def,dead>, %R13<imp-use,kill>, %R13<imp-def>
+  %R13D<def,tied1> = AND32ri %R13D<tied0>, 8388607, %EFLAGS<imp-def,dead>, %R13<imp-use,kill>, %R13<imp-def>
+  %RBX<def> = MOV64ri 139998731743232
+  CMP64rr %RAX, %RBX, %EFLAGS<imp-def>
+  JNE_1 <BB#16>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %R14
+  %RSI<def> = LEA64r %RAX<kill>, 8, %R13, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6Parent+16>, %RDI<imp-def>
+  BNDCU64rm %BND0<kill>, %R15, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %RBP, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildB+16>; mem:ST8[%86](tbaa=!2)
+  %RAX<def> = MOV64rm %R12<kill>, 8, %R14, 0, %noreg; mem:LD8[%sunkaddr390]
+  CMP64rr %RAX, %RBX<kill>, %EFLAGS<imp-def>
+  JNE_1 <BB#18>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %R14
+  %RSI<def> = LEA64r %RAX<kill>, 8, %R13, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6ChildB+16>, %RDI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.4>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 4, %RDX<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RSI<def> = MOV64rr %RBP
+  %RBX<def> = MOV64rr %RAX
+  %RAX<def> = MOV64rm %RBX, 1, %noreg, 0, %noreg; mem:LD8[%94](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%95]
+  %R12<def> = MOV64rm %RBX, 1, %RAX<kill>, 240, %noreg; mem:LD8[%97](tbaa=!5)
+  TEST64rr %R12, %R12, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  CMP8mi %R12, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i122](align=8)(tbaa=!10)
+  JE_1 <BB#21>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %R12<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i125](tbaa=!7)
+  JMP_1 <BB#22>
+  %RDI<def> = MOV64rr %R12
+  %RAX<def> = MOV64rr %R12
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RCX<def> = MOV64ri 139642347479040
+  %RAX<def> = MOV64rm %RCX<kill>, 1, %RAX<kill>, 0, %noreg; mem:LD8[%107]
+  %ECX<def> = MOV32rr %R12D, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%110]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %R12<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %RDI<def> = MOV64rr %RBX<kill>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %RAX<def> = LEA64r %RSP, 1, %noreg, 48, %noreg
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0, %RAX<kill>, 0, %noreg, 4286643562, %noreg
+  %RAX<def> = MOV64rm %RSP, 1, %noreg, 32, %noreg; mem:LD8[FixedStack3]
+  MOV64mr %RSP, 1, %noreg, 48, %noreg, %RAX<kill>; mem:ST8[%114](align=16)(tbaa=!6)
+  %RAX<def> = LEA64r %RSP, 1, %noreg, 56, %noreg
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0, %RAX<kill>, 0, %noreg, 4286643562, %noreg
+  %RAX<def> = MOV64rm %RSP, 1, %noreg, 24, %noreg; mem:LD8[FixedStack4]
+  MOV64mr %RSP, 1, %noreg, 56, %noreg, %RAX<kill>; mem:ST8[%115](tbaa=!6)
+  %RAX<def> = LEA64r %RSP, 1, %noreg, 64, %noreg
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0<kill>, %RAX<kill>, 0, %noreg, 4286643562, %noreg
+  MOV64mr %RSP, 1, %noreg, 64, %noreg, %RBP; mem:ST8[%116](align=16)(tbaa=!6)
+  %EAX<def> = MOV32rm %RSP, 1, %noreg, 16, %noreg; mem:LD4[FixedStack5]
+  TEST8ri %AL, 1, %EFLAGS<imp-def>, %EAX<imp-use,kill>
+  %EAX<def> = MOV32ri <ga:@_Z3barPP6Parent>, %RAX<imp-def>
+  %ECX<def> = MOV32ri <ga:@_Z3bazPP6Parent>, %RCX<imp-def>
+  %RCX<def,tied1> = CMOVE64rr %RCX<kill,tied0>, %RAX<kill>, %EFLAGS<imp-use,kill>
+  %RDI<def> = LEA64r %RSP, 1, %noreg, 48, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.5>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 12, %RDX<imp-def>
+  %RAX<def> = MOV64rm %RIP, 1, %noreg, <ga:@_ZSt4cout>, %noreg; mem:LD8[bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**)](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%117]
+  %RBX<def> = MOV64rm %RAX<kill>, 1, %noreg, <ga:@_ZSt4cout+240>, %noreg; mem:LD8[%118](tbaa=!5)
+  TEST64rr %RBX, %RBX, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  MOV64mr %RSP, 1, %noreg, 16, %noreg, %RBP<kill>; mem:ST8[FixedStack5]
+  CMP8mi %RBX, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i144](align=8)(tbaa=!10)
+  JE_1 <BB#25>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBX<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i147](tbaa=!7)
+  %RBP<def> = MOV64ri 139642347479040
+  %R12<def> = MOV64rr %RBP<kill>
+  JMP_1 <BB#26>
+  %RDI<def> = MOV64rr %RBX
+  %RAX<def> = MOV64rr %RBX
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RBP<def> = MOV64ri 139642347479040
+  %R12<def> = MOV64rr %RBP<kill>
+  %RAX<def> = MOV64rm %R12, 1, %RAX<kill>, 0, %noreg; mem:LD8[%128]
+  %ECX<def> = MOV32rr %EBX, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%131]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBX<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RDI<def> = MOV64rr %RAX<kill>
+  BNDCU64rm %BND0<kill>, %R15, 0, %noreg, 4286643562, %noreg
+  %RBP<def> = MOV64rm %RSP, 1, %noreg, 16, %noreg; mem:LD8[FixedStack5]
+  MOV64mi32 %RBP, 1, %noreg, 0, %noreg, <ga:@_ZTV6Parent+16>; mem:ST8[%134](tbaa=!2)
+  %RAX<def> = MOV64rm %R12, 8, %R14, 0, %noreg; mem:LD8[%sunkaddr394]
+  %RBX<def> = MOV64ri 139998731743232
+  CMP64rr %RAX, %RBX, %EFLAGS<imp-def>
+  JNE_1 <BB#28>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %R14
+  %RSI<def> = LEA64r %RAX<kill>, 8, %R13, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6Parent+16>, %RDI<imp-def>
+  BNDCU64rm %BND0<kill>, %R15<kill>, 0, %noreg, 4286643562, %noreg
+  MOV64mi32 %RBP, 1, %noreg, 0, %noreg, <ga:@_ZTV6ChildB+16>; mem:ST8[%140](tbaa=!2)
+  %RAX<def> = MOV64rm %R12<kill>, 8, %R14, 0, %noreg; mem:LD8[%sunkaddr397]
+  CMP64rr %RAX, %RBX<kill>, %EFLAGS<imp-def>
+  JNE_1 <BB#30>, %EFLAGS<imp-use>
+  %RDI<def> = MOV64rr %R14<kill>
+  %RSI<def> = LEA64r %RAX<kill>, 8, %R13<kill>, 0, %noreg
+  %EDI<def,dead> = MOV32ri <ga:@_ZTV6ChildB+16>, %RDI<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.6>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 4, %RDX<imp-def>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RSI<def> = MOV64rr %RBP<kill>
+  %RBX<def> = MOV64rr %RAX
+  %RAX<def> = MOV64rm %RBX, 1, %noreg, 0, %noreg; mem:LD8[%148](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%149]
+  %RBP<def> = MOV64rm %RBX, 1, %RAX<kill>, 240, %noreg; mem:LD8[%151](tbaa=!5)
+  TEST64rr %RBP, %RBP, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  CMP8mi %RBP, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i173](align=8)(tbaa=!10)
+  %R13<def> = MOV64ri 139642347479040
+  %R14<def> = MOV64ri 139998731743232
+  JE_1 <BB#33>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBP<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i176](tbaa=!7)
+  JMP_1 <BB#34>
+  %RDI<def> = MOV64rr %RBP
+  %RAX<def> = MOV64rr %RBP
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R13, 1, %RAX<kill>, 0, %noreg; mem:LD8[%161]
+  %ECX<def> = MOV32rr %EBP, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%164]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBP<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %RDI<def> = MOV64rr %RBX<kill>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %ESI<def,dead> = MOV32ri <ga:@.str.7>, %RSI<imp-def>
+  %EDX<def,dead> = MOV32ri 16, %RDX<imp-def>
+  %RAX<def> = MOV64rm %RIP, 1, %noreg, <ga:@_ZSt4cout>, %noreg; mem:LD8[bitcast (%"class.std::basic_ostream"* @_ZSt4cout to i8**)](tbaa=!2)
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %noreg, -24, %noreg; mem:LD8[%167]
+  %RBX<def> = MOV64rm %RAX<kill>, 1, %noreg, <ga:@_ZSt4cout+240>, %noreg; mem:LD8[%168](tbaa=!5)
+  TEST64rr %RBX, %RBX, %EFLAGS<imp-def>
+  JE_1 <BB#95>, %EFLAGS<imp-use>
+  CMP8mi %RBX, 1, %noreg, 56, %noreg, 0, %EFLAGS<imp-def>; mem:LD1[%_M_widen_ok.i.i.i195](align=8)(tbaa=!10)
+  JE_1 <BB#37>, %EFLAGS<imp-use,kill>
+  %AL<def> = MOV8rm %RBX<kill>, 1, %noreg, 67, %noreg; mem:LD1[%arrayidx.i.i.i198](tbaa=!7)
+  JMP_1 <BB#38>
+  %RDI<def> = MOV64rr %RBX
+  %RAX<def> = MOV64rr %RBX
+  %RAX<def,tied1> = SHR64ri %RAX<kill,tied0>, 23, %EFLAGS<imp-def,dead>
+  %EAX<def,tied1> = AND32ri %EAX<tied0>, 33554424, %EFLAGS<imp-def,dead>, %RAX<imp-use,kill>, %RAX<imp-def>
+  %RAX<def> = MOV64rm %R13, 1, %RAX<kill>, 0, %noreg; mem:LD8[%178]
+  %ECX<def> = MOV32rr %EBX, %RCX<imp-def>
+  %ECX<def,tied1> = AND32ri %ECX<tied0>, 67108856, %EFLAGS<imp-def,dead>, %RCX<imp-use,kill>, %RCX<imp-def>
+  %RAX<def> = MOV64rm %RAX<kill>, 1, %RCX<kill>, 0, %noreg; mem:LD8[%181]
+  %ESI<def> = MOV32ri 10
+  %RDI<def> = MOV64rr %RBX<kill>
+  %ESI<def> = MOVSX32rr8 %AL<kill>
+  %EDI<def,dead> = MOV32ri <ga:@_ZSt4cout>, %RDI<imp-def>
+  %RDI<def> = MOV64rr %RAX<kill>
+  %EDI<def,dead> = MOV32ri 8, %RDI<imp-def>
+  %R15<def> = MOV64rr %RAX
+  %R12<def> = LEA64r %R15, 1, %noreg, 0, %noreg
+  %R12<def,tied1> = SHR64ri %R12<kill,tied0>, 24, %EFLAGS<imp-def,dead>
+  BNDCU64rm %BND0<kill>, %R12, 0, %noreg, 4286643562, %noreg
+clang-3.9: /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/MCTargetDesc/X86MCCodeEmitter.cpp:110: static uint8_t (anonymous namespace)::X86MCCodeEmitter::ModRMByte(unsigned int, unsigned int, unsigned int): Assertion `Mod < 4 && RegOpcode < 8 && RM < 8 && "ModRM Fields out of range!"' failed.
+#0 0x00007fc292954f3c llvm::sys::PrintStackTrace(llvm::raw_ostream&) /home/nathan/Code/cfixx-code/llvm/lib/Support/Unix/Signals.inc:402:11
+#1 0x00007fc292955429 PrintStackTraceSignalHandler(void*) /home/nathan/Code/cfixx-code/llvm/lib/Support/Unix/Signals.inc:470:1
+#2 0x00007fc292953af3 llvm::sys::RunSignalHandlers() /home/nathan/Code/cfixx-code/llvm/lib/Support/Signals.cpp:45:5
+#3 0x00007fc292955774 SignalHandler(int) /home/nathan/Code/cfixx-code/llvm/lib/Support/Unix/Signals.inc:256:1
+#4 0x00007fc2920b4390 __restore_rt (/lib/x86_64-linux-gnu/libpthread.so.0+0x11390)
+#5 0x00007fc29019d428 gsignal /build/glibc-9tT8Do/glibc-2.23/signal/../sysdeps/unix/sysv/linux/raise.c:54:0
+#6 0x00007fc29019f02a abort /build/glibc-9tT8Do/glibc-2.23/stdlib/abort.c:91:0
+#7 0x00007fc290195bd7 __assert_fail_base /build/glibc-9tT8Do/glibc-2.23/assert/assert.c:92:0
+#8 0x00007fc290195c82 (/lib/x86_64-linux-gnu/libc.so.6+0x2dc82)
+#9 0x00007fc294d55c03 (anonymous namespace)::X86MCCodeEmitter::ModRMByte(unsigned int, unsigned int, unsigned int) /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/MCTargetDesc/X86MCCodeEmitter.cpp:111:12
+#10 0x00007fc294d55f55 (anonymous namespace)::X86MCCodeEmitter::EmitSIBByte(unsigned int, unsigned int, unsigned int, unsigned int&, llvm::raw_ostream&) const /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/MCTargetDesc/X86MCCodeEmitter.cpp:122:42
+#11 0x00007fc294d5523a (anonymous namespace)::X86MCCodeEmitter::emitMemModRMByte(llvm::MCInst const&, unsigned int, unsigned int, unsigned long, bool, unsigned int&, llvm::raw_ostream&, llvm::SmallVectorImpl<llvm::MCFixup>&, llvm::MCSubtargetInfo const&) const /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/MCTargetDesc/X86MCCodeEmitter.cpp:587:7
+#12 0x00007fc294d521d8 (anonymous namespace)::X86MCCodeEmitter::encodeInstruction(llvm::MCInst const&, llvm::raw_ostream&, llvm::SmallVectorImpl<llvm::MCFixup>&, llvm::MCSubtargetInfo const&) const /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/MCTargetDesc/X86MCCodeEmitter.cpp:1346:13
+#13 0x00007fc292fdacf3 llvm::MCELFStreamer::EmitInstToData(llvm::MCInst const&, llvm::MCSubtargetInfo const&) /home/nathan/Code/cfixx-code/llvm/lib/MC/MCELFStreamer.cpp:478:26
+#14 0x00007fc292ffa889 llvm::MCObjectStreamer::EmitInstruction(llvm::MCInst const&, llvm::MCSubtargetInfo const&) /home/nathan/Code/cfixx-code/llvm/lib/MC/MCObjectStreamer.cpp:244:5
+#15 0x00007fc2951d977b llvm::X86AsmPrinter::EmitAndCountInstruction(llvm::MCInst&) /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/X86MCInstLower.cpp:107:3
+#16 0x00007fc2951dd3db llvm::X86AsmPrinter::EmitInstruction(llvm::MachineInstr const*) /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/X86MCInstLower.cpp:2323:1
+#17 0x00007fc28ffc5dca llvm::AsmPrinter::EmitFunctionBody() /home/nathan/Code/cfixx-code/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp:908:11
+#18 0x00007fc294f52931 llvm::X86AsmPrinter::runOnMachineFunction(llvm::MachineFunction&) /home/nathan/Code/cfixx-code/llvm/lib/Target/X86/X86AsmPrinter.cpp:73:3
+#19 0x00007fc293f5efe6 llvm::MachineFunctionPass::runOnFunction(llvm::Function&) /home/nathan/Code/cfixx-code/llvm/lib/CodeGen/MachineFunctionPass.cpp:60:8
+#20 0x00007fc2938f776f llvm::FPPassManager::runOnFunction(llvm::Function&) /home/nathan/Code/cfixx-code/llvm/lib/IR/LegacyPassManager.cpp:1526:27
+#21 0x00007fc2938f7a85 llvm::FPPassManager::runOnModule(llvm::Module&) /home/nathan/Code/cfixx-code/llvm/lib/IR/LegacyPassManager.cpp:1547:16
+#22 0x00007fc2938f821a (anonymous namespace)::MPPassManager::runOnModule(llvm::Module&) /home/nathan/Code/cfixx-code/llvm/lib/IR/LegacyPassManager.cpp:1603:27
+#23 0x00007fc2938f7d46 llvm::legacy::PassManagerImpl::run(llvm::Module&) /home/nathan/Code/cfixx-code/llvm/lib/IR/LegacyPassManager.cpp:1706:16
+#24 0x00007fc2938f8731 llvm::legacy::PassManager::run(llvm::Module&) /home/nathan/Code/cfixx-code/llvm/lib/IR/LegacyPassManager.cpp:1737:3
+#25 0x00007fc291493671 (anonymous namespace)::EmitAssemblyHelper::EmitAssembly(clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream> >) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/CodeGen/BackendUtil.cpp:739:19
+#26 0x00007fc291492c16 clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::DataLayout const&, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream> >) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/CodeGen/BackendUtil.cpp:751:13
+#27 0x00007fc2917c8d2f clang::BackendConsumer::HandleTranslationUnit(clang::ASTContext&) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/CodeGen/CodeGenAction.cpp:179:7
+#28 0x00007fc28e2c0ea1 clang::ParseAST(clang::Sema&, bool, bool) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/Parse/ParseAST.cpp:167:13
+#29 0x00007fc29105cccc clang::ASTFrontendAction::ExecuteAction() /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/Frontend/FrontendAction.cpp:558:1
+#30 0x00007fc2917c65fd clang::CodeGenAction::ExecuteAction() /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/CodeGen/CodeGenAction.cpp:854:1
+#31 0x00007fc29105c7a0 clang::FrontendAction::Execute() /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/Frontend/FrontendAction.cpp:461:7
+#32 0x00007fc290fed033 clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/Frontend/CompilerInstance.cpp:868:7
+#33 0x00007fc290de92a5 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) /home/nathan/Code/cfixx-code/llvm/tools/clang/lib/FrontendTool/ExecuteCompilerInvocation.cpp:241:8
+#34 0x0000000000422dcd cc1_main(llvm::ArrayRef<char const*>, char const*, void*) /home/nathan/Code/cfixx-code/llvm/tools/clang/tools/driver/cc1_main.cpp:116:11
+#35 0x0000000000416a8a ExecuteCC1Tool(llvm::ArrayRef<char const*>, llvm::StringRef) /home/nathan/Code/cfixx-code/llvm/tools/clang/tools/driver/driver.cpp:301:5
+#36 0x000000000041593a main /home/nathan/Code/cfixx-code/llvm/tools/clang/tools/driver/driver.cpp:382:5
+#37 0x00007fc290188830 __libc_start_main /build/glibc-9tT8Do/glibc-2.23/csu/../csu/libc-start.c:325:0
+#38 0x0000000000414d39 _start (/home/nathan/Code/cfixx-code/debug-install/bin/clang-3.9+0x414d39)
+Stack dump:
+0.	Program arguments: /home/nathan/Code/cfixx-code/debug-install/bin/clang-3.9 -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -disable-free -main-file-name single-inheritance.cpp -mrelocation-model static -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu x86-64 -momit-leaf-frame-pointer -v -dwarf-column-info -debugger-tuning=gdb -resource-dir /home/nathan/Code/cfixx-code/debug-install/bin/../lib/clang/3.9.1 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/x86_64-linux-gnu/c++/5.4.0 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/5.4.0/../../../../include/c++/5.4.0/backward -internal-isystem /usr/local/include -internal-isystem /home/nathan/Code/cfixx-code/debug-install/bin/../lib/clang/3.9.1/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -std=c++11 -fdeprecated-macro -fdebug-compilation-dir /home/nathan/Code/cfixx-code/Test -ferror-limit 19 -fmessage-length 0 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o /tmp/single-inheritance-248fd6.o -x c++ single-inheritance.cpp 
+1.	<eof> parser at end of file
+2.	Code generation
+3.	Running pass 'Function Pass Manager' on module 'single-inheritance.cpp'.
+4.	Running pass 'X86 Assembly / Object Emitter' on function '@main'
+clang-3.9: error: unable to execute command: Aborted (core dumped)
+clang-3.9: error: clang frontend command failed due to signal (use -v to see invocation)
+clang version 3.9.1 (tags/RELEASE_391/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/nathan/Code/cfixx-code/Test/../debug-install/bin
+clang-3.9: note: diagnostic msg: PLEASE submit a bug report to http://llvm.org/bugs/ and include the crash backtrace, preprocessed source, and associated run script.
+clang-3.9: note: diagnostic msg: 
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang-3.9: note: diagnostic msg: /tmp/single-inheritance-dbbb06.cpp
+clang-3.9: note: diagnostic msg: /tmp/single-inheritance-dbbb06.sh
+clang-3.9: note: diagnostic msg: 
+
+********************
+make: *** [single] Error 254
