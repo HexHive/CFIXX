@@ -38,6 +38,9 @@ ln -s $src/CGClass.cpp $ccg
 rm $ccg/CodeGenFunction.h
 ln -s $src/CodeGenFunction.h $ccg
 
+rm $ccg/CodeGenModule.h
+ln -s $src/CodeGenModule.h $ccg
+
 rm $ccg/ItaniumCXXABI.cpp
 ln -s $src/ItaniumCXXABI.cpp $ccg
 
@@ -56,13 +59,12 @@ ln -s $src/TargetPassConfig.cpp $lcg
 rm $cdriver/Tools.cpp
 ln -s $src/Tools.cpp $cdriver
 
-rm $lcg/CFIXX.cpp
 ln -s $src/CFIXX.cpp $lcg
 
 rm $lcg/CMakeLists.txt
 ln -s $src/llvm-CodeGen-CMakeLists.txt $lcg/CMakeLists.txt
 
-rm $x86/X86ISelDAGTToDAG.cpp
+rm $x86/X86ISelDAGToDAG.cpp
 ln -s $src/X86ISelDAGToDAG.cpp $x86
 
 rm $x86/X86MCInstLower.cpp
@@ -71,8 +73,4 @@ ln -s $src/X86MCInstLower.cpp $x86
 rm $crtlib/CMakeLists.txt
 ln -s $src/compiler-rt-lib-CMakeLists.txt $crtlib/CMakeLists.txt
 
-rm -r $crtlib/cfixx
-mkdir $crtlib/cfixx
-
-ln -s $src/compiler-rt-cfixx/cfixx.cpp $crtlib/cfixx
-ln -s $src/compiler-rt-cfixx/CMakeLists.txt $crtlib/cfixx
+ln -s $src/compiler-rt-cfixx $crtlib/cfixx

@@ -21,4 +21,4 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$INSTALL_PATH \
   ../llvm
 
-cmake --build .
+#cmake --build .
