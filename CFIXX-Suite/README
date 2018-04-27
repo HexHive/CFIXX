@@ -1,0 +1,10 @@
+A suite demonstrating various attack scenarios for C++ applications.
+
+## Building
+
+* `make` builds the different suite with no protection.
+* `make cfixx` builds the suite with CFIXX
+* `make cfi` builds the suite with LLVM CFI
+* `make cps` builds the suite with CPS
+
+Edit `Makefile` to choose which tests to be included in the final binary.
