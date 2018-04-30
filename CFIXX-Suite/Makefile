@@ -1,22 +1,25 @@
 BUILD_FLAGS := -c
 CXXFLAGS 	+= -g -O0
 CXX 		:= clang++
-INCLUDES 	:= -Isrc/include -Iscenarios
-CLASS_DIR 	:= src/classes
-BUILD_DIR 	:= objs
+SRC_DIR		:= src
 SCEN_DIR 	:= scenarios
-MAIN_OBJ 	:= tests
+INCLUDES 	:= -Iinclude -I$(SRC_DIR)/$(SCEN_DIR)
+CLASS_DIR 	:= classes
+BUILD_DIR 	:= objs
+EXE_NAME 	:= tests
 CFI_FLAGS 	:= -fsanitize=cfi-vcall -flto -fvisibility=hidden
 CFIXX_FLAGS	:= 
 CPS_FLAGS	:= -flto -fcps
 
-CLASS_SRC	:= $(CLASS_DIR)/AddVirtual.cpp $(CLASS_DIR)/SubVirtual.cpp $(CLASS_DIR)/DiffVirtual.cpp
-CLASS_OBJS	:= $(patsubst $(CLASS_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(CLASS_SRC))
+CLASS_SRC	:= $(wildcard $(SRC_DIR)/$(CLASS_DIR)/*.cpp)
+CLASS_OBJS	:= $(patsubst $(SRC_DIR)/$(CLASS_DIR)/%.cpp, $(BUILD_DIR)/$(CLASS_DIR)/%.o, $(CLASS_SRC))
 
-SCEN_SRC	:= $(SCEN_DIR)/inside_memcpy.cpp $(SCEN_DIR)/outside_memcpy.cpp $(SCEN_DIR)/different_signature.cpp $(SCEN_DIR)/same_signature.cpp $(SCEN_DIR)/fake_object.cpp
-SCEN_OBJS	:= $(patsubst $(SCEN_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SCEN_SRC))
+SCEN_SRC	:= $(wildcard $(SRC_DIR)/$(SCEN_DIR)/*.cpp)
+SCEN_OBJS	:= $(patsubst $(SRC_DIR)/$(SCEN_DIR)/%.cpp, $(BUILD_DIR)/$(SCEN_DIR)/%.o, $(SCEN_SRC))
 
-MAIN_SRC 	:= $(SCEN_DIR)/main.cpp
+MAIN_SRC 	:= $(SRC_DIR)/main.cpp
+MAIN_OBJ	:= $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(MAIN_SRC))
+
 ALL_SRC 	:= $(CLASS_SRC) $(SCEN_SRC) $(MAIN_SRC)
 
 all: tests
@@ -62,17 +65,23 @@ cfi-single: $(ALL_SRC)
 single: $(ALL_SRC)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(MAIN_OBJ) $(ALL_SRC)
 
-$(BUILD_DIR)/%.o: %.cpp
+$(BUILD_DIR)/$(CLASS_DIR)/%.o: $(SRC_DIR)/$(CLASS_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(BUILD_FLAGS) $(INCLUDES) -o $@ $<
 
-classes: ${CLASS_OBJS}
+#classes: ${CLASS_OBJS}
 
-tests: build-dir classes $(SCEN_OBJS) 
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(MAIN_OBJ) $(SCEN_OBJS) $(CLASS_OBJS) $(MAIN_SRC)
+$(BUILD_DIR)/$(SCEN_DIR)/%.o: $(SRC_DIR)/$(SCEN_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(BUILD_FLAGS) $(INCLUDES) -o $@ $<
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(BUILD_FLAGS) $(INCLUDES) -o $@ $<
+
+tests: build-dir $(CLASS_OBJS) $(SCEN_OBJS) $(MAIN_OBJ)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(EXE_NAME) $(SCEN_OBJS) $(CLASS_OBJS) $(MAIN_OBJ)
 # ******************************************************************************
 
 build-dir:
-	mkdir -p $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR)/$(CLASS_DIR); mkdir -p $(BUILD_DIR)/$(SCEN_DIR)
 
 clean:
-	rm -rf $(MAIN_OBJ) $(BUILD_DIR)
+	rm -rf $(EXE_NAME) $(BUILD_DIR)
