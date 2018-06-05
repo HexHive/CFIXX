@@ -74,3 +74,6 @@ rm $crtlib/CMakeLists.txt
 ln -s $src/compiler-rt-lib-CMakeLists.txt $crtlib/CMakeLists.txt
 
 ln -s $src/compiler-rt-cfixx $crtlib/cfixx
+
+rm libcxxabi/test/CMakeLists.txt
+ln -s $src/libcxxabi-test-CMakeLists.txt libcxxabi/test/CMakeLists.txt
